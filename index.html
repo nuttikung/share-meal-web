@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>shared_meal</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+  <link rel="preload" as="script" href="/share-meal-web/assets/shared_meal-5a6a0c8f86370ebc.js" crossorigin><link rel="preload" as="fetch" type="application/wasm" href="/share-meal-web/assets/shared_meal_bg-c4721e299b423ead.wasm" crossorigin></head>
+  <body>
+    <div id="main"></div>
+  <script>
+            // We can't use a module script here because we need to start the script immediately when streaming
+            import("/share-meal-web/assets/shared_meal-5a6a0c8f86370ebc.js").then(
+                ({ default: init }) => {
+                init("/share-meal-web/assets/shared_meal_bg-c4721e299b423ead.wasm").then((wasm) => {
+                    if (wasm.__wbindgen_start == undefined) {
+                    wasm.main();
+                    }
+                });
+                }
+            );
+            </script>
+            
+            </body>
+</html>
